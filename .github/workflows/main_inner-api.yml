@@ -41,6 +41,6 @@ jobs:
         uses: azure/webapps-deploy@v2
         with:
           app-name: 'inner-api'
-          slot-name: 'Development'
+          slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_D1F96BD0CD2B42488254E4889DB590FA }}
           package: .
