@@ -26,8 +26,8 @@ jobs:
         run: dotnet build ./aspnet-core/inner.masterApi.sln  --configuration Release
 
       - name: dotnet publish
-        run: dotnet publish ./aspnet-core/aspnet-core/src/inner.masterApi.Web.Host/inner.masterApi.Web.Host.csproj -c Release -o
-
+        run: dotnet publish ./aspnet-core/aspnet-core/src/inner.masterApi.Web.Host/inner.masterApi.Web.Host.csproj --configuration Release 
+        
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
         with:
