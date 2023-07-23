@@ -7,3 +7,5 @@ bin/
 aspnet-core/src/inner.masterApi.Web.Host/App_Data/Logs/
 aspnet-core/src/inner.masterApi.Web.Mvc/App_Data/Logs/
 aspnet-core/src/inner.masterApi.Migrator/Logs/Logs.txt
+/aspnet-core/inner.masterApi.sln
+*.editorconfig
