@@ -26,20 +26,22 @@ jobs:
         run: dotnet build ./aspnet-core/inner.masterApi.sln  --configuration Release
 
       - name: dotnet publish
-        run: dotnet publish -c Release -o ./aspnet-core/build
-
+        run: dotnet publish ./aspnet-core/src/inner.masterApi.Web.Host/inner.masterApi.Web.Host.csproj --configuration Release 
+        
       - name: Upload artifact for deployment job
-        uses: actions/upload-artifact@v2
+        uses: ./aspnet-core/build
         with:
           name: .net-app
           path: ${{env.DOTNET_ROOT}}/myapp
-
   deploy:
     runs-on: windows-latest
     needs: build
     environment:
-      name: 'Production'
+      name: 'Dev'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
+      
+
+
 
     steps:
       - name: Download artifact from build job
