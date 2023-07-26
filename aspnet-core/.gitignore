@@ -5,7 +5,7 @@
 *.suo
 *.user
 *.userosscache
-*.sln.docstates
+
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
@@ -249,7 +249,7 @@ paket-files/
 
 # JetBrains Rider
 .idea/
-*.sln.iml
+
 
 src/inner.masterApi.Web.Mvc/secrets.json
 src/inner.masterApi.Web.Host/secrets.json
