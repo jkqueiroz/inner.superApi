@@ -12,6 +12,11 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Remove="Upload\**" />
+    <EmbeddedResource Remove="Upload\**" />
+    <None Remove="Upload\**" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\inner.masterApi.Core\inner.masterApi.Core.csproj" />
   </ItemGroup>
 </Project>
