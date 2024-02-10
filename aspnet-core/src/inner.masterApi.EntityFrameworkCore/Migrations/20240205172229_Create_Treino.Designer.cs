@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using inner.masterApi.EntityFrameworkCore;
 
@@ -11,9 +12,10 @@ using inner.masterApi.EntityFrameworkCore;
 namespace inner.masterApi.Migrations
 {
     [DbContext(typeof(masterApiDbContext))]
-    partial class masterApiDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240205172229_Create_Treino")]
+    partial class Create_Treino
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -1364,65 +1366,6 @@ namespace inner.masterApi.Migrations
                     b.ToTable("AbpWebhookSubscriptions");
                 });
 
-            modelBuilder.Entity("inner.masterApi.Atleta.Atleta", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<string>("CEP")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Cidade")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ContatoEmergencia")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("CreationTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
-                    b.Property<string>("Endereço")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Estado")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("Modalidade")
-                        .HasColumnType("int");
-
-                    b.Property<string>("NomeAtleta")
-                        .IsRequired()
-                        .HasMaxLength(150)
-                        .HasColumnType("nvarchar(150)");
-
-                    b.Property<string>("Obs")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PosicaoPreferencial")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PosicaoSecundaria")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("RG")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Telefone")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Atleta");
-                });
-
             modelBuilder.Entity("inner.masterApi.Authorization.Roles.Role", b =>
                 {
                     b.Property<int>("Id")
@@ -1626,38 +1569,6 @@ namespace inner.masterApi.Migrations
                     b.ToTable("AbpUsers");
                 });
 
-            modelBuilder.Entity("inner.masterApi.Modalidade.Modalidade", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<string>("AuxTecnico")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("CreationTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("NomeModalidade")
-                        .IsRequired()
-                        .HasMaxLength(150)
-                        .HasColumnType("nvarchar(150)");
-
-                    b.Property<string>("Obs")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("RespTecnico")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Modalidade");
-                });
-
             modelBuilder.Entity("inner.masterApi.MultiTenancy.Tenant", b =>
                 {
                     b.Property<int>("Id")
@@ -1782,7 +1693,8 @@ namespace inner.masterApi.Migrations
 
                     b.Property<string>("ModalidadeTreino")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("NomeTreino")
                         .IsRequired()

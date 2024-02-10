@@ -35,7 +35,7 @@ namespace inner.masterApi.Tarefa
                 result.Add(tarefaDto);
             }
 
-            return tarefas;
+            return result;
         }
     }
 }
