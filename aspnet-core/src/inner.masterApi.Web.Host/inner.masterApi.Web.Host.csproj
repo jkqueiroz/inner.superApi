@@ -11,6 +11,7 @@
     <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
     <LangVersion>7.2</LangVersion>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
+	<GenerateRuntimeConfigurationFiles>true</GenerateRuntimeConfigurationFiles>
   </PropertyGroup>
   <ItemGroup>
     <Content Remove="wwwroot\swagger\ui\index.html" />

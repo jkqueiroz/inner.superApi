@@ -14,7 +14,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using IObjectMapper = Abp.ObjectMapping.IObjectMapper;
 
 namespace inner.masterApi.Tarefa
 {
@@ -36,7 +35,7 @@ namespace inner.masterApi.Tarefa
                 result.Add(tarefaDto);
             }
 
-            return tarefas;
+            return result;
         }
     }
 }

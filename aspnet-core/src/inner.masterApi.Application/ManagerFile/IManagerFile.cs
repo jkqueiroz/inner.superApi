@@ -1,18 +1,15 @@
 ﻿using Abp.Application.Services;
-using inner.masterApi.Upload.Dto;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
+using static inner.masterApi.MangerFile.ManagerFile;
 
-namespace inner.masterApi.Upload
+namespace inner.masterApi.MangerFile
 {
-    public interface IUploadService : IApplicationService
+    public interface IManagerFile : IApplicationService
     {
         Task<string> Upload([FromForm] IFormCollection file);
+        Task<DownloadFile> Download(string file);
     }
 }
